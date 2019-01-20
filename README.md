@@ -1,0 +1,1 @@
+This will be a bot to get the weather forecast for Cuba for the next ten days.
