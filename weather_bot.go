@@ -13,7 +13,7 @@ import (
 )
 
 // This is a fixed url for Havana weather forecast in spanish
-var BASE_URL = "https://weather.com/es-CL/tiempo/10dias/l/CUXX0003:1:CU";
+const BASE_URL = "https://weather.com/es-CL/tiempo/10dias/l/CUXX0003:1:CU";
 
 // Global channels for communication.
 var response_channel = make(chan *bs.Node)
@@ -112,8 +112,6 @@ func start_bot() {
 			switch query {
 			case "/weather", "/tiempo":
 				send_strarray_as_messages(bot, <-values_channel, message.Chat)
-			default:
-				bot.Send(message.Chat, "🤔... no entendí")
 			}
 		}
 	})
